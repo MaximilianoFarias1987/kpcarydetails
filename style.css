@@ -1,0 +1,335 @@
+/* Creamos una propiedad para que resetee todo en el navegador */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background: black;
+    color: white;
+    /* a este fondo lo obtengo de https://www.heropatterns.com/  */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.1'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-size: 16px;
+    /* A la fuente la obtengo de  https://fonts.google.com/specimen/Oswald?standard-styles=&selection.family=Oswald:wght@200;300;400 */
+    font-family: 'oswald', sans-serif;
+
+}
+
+/* Le doy estilo a  las etiquetas a para q se vean blancas y sacarle el subrayado */
+a{
+    color: white;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+/* Estilos de navegacion */
+.nav-main{
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+    position: sticky;
+    top: 0px;
+}
+
+.nav-brand{
+    width: 80px;
+}
+
+/* Navegacion izquierda */
+.nav-main ul{
+    display: flex;
+}
+
+.nav-main ul li{
+    padding: 10px;
+}
+
+.nav-main ul li a{
+    padding: 5px;
+}
+
+.nav-main ul li a:hover{
+    border-bottom: 2px solid white;
+}
+
+.nav-main ul.nav-menu{
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Creo boton para el menu responsive */
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 12px;
+    right: 30px;
+    z-index: 2;
+    font-size: 1.5rem;
+    display: none;/*Esto es para que el boton no se vea en pantalla completa*/
+    /* position: fixed; */
+}
+
+/* Showcase */
+hr{
+    margin: 10px 0;
+}
+
+.showcase{
+    /* top: 200px; */
+    width: 100%;
+    height: 550px;
+    background: url(img/showcase.jpeg)no-repeat center center/cover;
+    /* Con lo que agrego despues hago que la imagen se centre y se vea completa */
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.textheader{
+    padding-left: 10px;
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: 10px 20px;
+    background: #262626;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #fff;
+    margin: 5px 0;
+}
+
+/* Añado efecto al btn */
+.btn:hover{
+    opacity: .7;
+}
+
+.showcase h2,
+.showcase p{
+    margin-bottom: 10px;
+}
+
+/* Estilos de las imagenes de seccion */
+
+/* Otra Seccion */
+
+.seccion{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Con estas propiedades hago que se utilice una grilla y le doy 4 columnas para que en ccada una se muestren las imagenes. */
+    gap: 25px; /*Con esto le damos espacio entre columnas */
+    margin: 10px 0;
+}
+
+.seccion img{
+    width: 100%;
+    height: 180px;
+}
+
+.seccion h3{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.seccion a{
+    padding: 10px 0;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* utilizo una pseudoclase para hacer que se subraye cuando paso el mouse */
+.seccion a:hover{
+    text-decoration: underline;
+}
+
+/* Estilo banner */
+
+.banner-seccion{
+    width: 100%;
+    height: 350px;
+    background: url('./img/banner.jpeg')no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.banner-seccion .content{
+    width: 40%;
+    padding: 90px 0 0 10px;
+    color: white;
+}
+
+.banner-seccion p,
+.banner-seccion h2{
+    margin: 10px 0 20px 0;
+}
+
+/* Estilo banner 2 */
+
+.banner-seccion2{
+    width: 100%;
+    height: 350px;
+    background: url('./img/banner2.png')no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.banner-seccion2 .content{
+    width: 50%;
+    padding: 100px 0 0 10px;
+    color: white;
+}
+
+.banner-seccion2 p,
+.banner-seccion2 h2{
+    margin: 10px 0 20px 0;
+}
+
+/* Estilos Social */
+
+.social{
+    margin: 50px;
+}
+.social p{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a{
+    margin: 0 30px;
+}
+
+.links a i{
+    font-size: 3rem;
+}
+
+/* Estilo footer links */
+
+.footer-links{
+    background: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 35px 0;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer-container ul{
+    margin: 0 auto;
+}
+
+.footer-container ul li{
+    line-height: 2.8;
+}
+
+.footer{
+    background: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 20px 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Lo q hago ahora es hacerlo responsive */
+
+@media(max-width: 700px){
+    /* Ahora creo el menu responsivo
+    le doy un top 0 y un left 0 para q se ubique a la izquierda*/
+    .nav-main{
+        position: relative;
+    }
+    .menu-btn{
+        display: block;
+        position: fixed;
+        /* Display block para que el boton me aparezca en las medidas menor a 700px */
+    }
+    .nav-main ul.nav-menu{
+        display: block;
+        position: absolute;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #2f3640;
+        height: 100%;
+        padding: 30px;
+        opacity: .9;
+        transform: translateX(-400px);
+        transition: transform .5s ease-in-out;
+        /* Con translateX hago q desaparezca el menu */
+    }
+    .nav-main ul.nav-menu.show{
+        transform: translateX(-20px);
+    }
+    .nav-main ul.nav-menu li{
+        padding: 20px;
+        /* border-bottom: #ccc solid 1px; */
+        font-size: 14px;
+    }
+
+    .nav-main ul.nav-menu-right{
+        margin-right: 30px;
+    }
+    .seccion{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .banner-seccion .content{
+        width: 80%;
+    }
+    .banner-seccion2 .content{
+        width: 80%;
+        padding: 70px 0 0 10px;
+    }
+
+    .footer-links .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px){
+    .seccion{
+        grid-template-columns: 1fr;
+    }
+    .seccion img{
+        height: 270px;
+    }
+    .banner-seccion .content,
+    .banner-seccion2 .content{
+        width: 100%;
+        padding: 60px 20px;
+    }
+
+    .footer-links .footer-container{
+        grid-template-columns: 1fr;
+    }
+}
